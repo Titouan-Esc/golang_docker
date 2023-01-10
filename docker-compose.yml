@@ -1,4 +1,22 @@
 version: "3.9"
 services:
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - "5436:5432"
+    volumes:
+      - type: volume
+        source: mydb
+        target: /var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=aaa111AAA
+      - POSTGRES_USER=admin
   server:
     build: .
+    ports:
+      - "4200:4200"
+
+volumes:
+  mydb:
+    external: true
