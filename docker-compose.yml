@@ -12,6 +12,10 @@ services:
       - POSTGRES_USER=admin
   server:
     build: .
+    volumes:
+      - type: bind
+        source: ~/.netrc
+        target: /root/.netrc
     ports:
       - "4200:4200"
 
