@@ -41,8 +41,12 @@ func main() {
 }
 
 func DB() *sql.DB {
-	dsn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable search_path=public", "db", "5432", "admin", "aaa111AAA", "postgres")
-	log.Println(dsn)
+	dsn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable search_path=public",
+		"db",
+		"5432",
+		"admin",
+		"aaa111AAA",
+		"postgres")
 	conn, err := sql.Open("postgres", dsn)
 	if err != nil {
 		log.Println(err.Error())

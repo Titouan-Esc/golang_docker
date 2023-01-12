@@ -1,9 +1,5 @@
 FROM golang:1.19
 
-# Copy the .env file for run the api
-# WORKDIR /usr/src/env
-# COPY /Users/titouan/Documents/flit-env/flitSport .
-
 # Now the api
 WORKDIR /usr/src/app
 
